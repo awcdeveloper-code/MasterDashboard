@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpService } from './http.service';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -20,7 +22,7 @@ import { Component10Component } from './component10/component10.component';
 import { Component11Component } from './component11/component11.component';
 @Component({
   selector: 'app-root',
-  imports: [CommonModule,
+  imports: [HttpClientModule, CommonModule,
     MatButtonModule,
     MatIconModule,
     Component0Component,
@@ -40,8 +42,9 @@ import { Component11Component } from './component11/component11.component';
 })
 
 export class AppComponent implements OnInit {
-  constructor(public dialog: MatDialog) {}
-  
+  constructor(public dialog: MatDialog, private http: HttpService) {}
+
+  posts: any[] = [];
   currentComponent: string = '';
   masterButtonDisable: boolean = false;
 
@@ -50,6 +53,7 @@ export class AppComponent implements OnInit {
     {
       this.masterButtonDisable = true;
     }
+    this.addPost();
     this.currentComponent = 'component0';
   }
 
@@ -67,6 +71,30 @@ export class AppComponent implements OnInit {
       if (result)
       {
         window.close();
+      }
+    });
+  }
+
+  loadPosts() {
+    this.http.getPosts().subscribe({
+      next: (data) => {
+        this.posts = data;
+      },
+      error: (error) => {
+        console.error('Error fetching posts', error);
+      }
+    });
+  }
+
+  addPost() {
+    const newPost = { title: 'New Post', body: 'This is a new post.' };
+    this.http.createPost(newPost).subscribe({
+      next: (response) => {
+        console.log('Post created', response);
+        this.loadPosts(); // Reload posts after adding a new one
+      },
+      error: (error) => {
+        console.error('Error creating post', error);
       }
     });
   }
