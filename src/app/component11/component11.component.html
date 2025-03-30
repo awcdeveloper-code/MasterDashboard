@@ -1,0 +1,21 @@
+<div class="login-container">
+    <h2>Ingreso al Sistema</h2>
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <div>
+        <label for="username">Código de Usuario:</label>
+        <input type="text" id="username" name="username" [(ngModel)]="username" required #usernameInput="ngModel" />
+        <div *ngIf="usernameInput.invalid && usernameInput.touched" class="error">
+          Nro. de PIN es requerido.
+        </div>
+      </div>
+      <div>
+        <label for="password">Palabra Clave:</label>
+        <input type="password" id="password" name="password" [(ngModel)]="password" required #passwordInput="ngModel" />
+        <div *ngIf="passwordInput.invalid && passwordInput.touched" class="error">
+          Palabra Clave es requerida.
+        </div>
+      </div>  
+      <button type="submit" [disabled]="loginForm.invalid">Validar</button>
+    </form>
+  </div>
+  
