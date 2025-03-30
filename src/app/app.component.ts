@@ -87,11 +87,11 @@ export class AppComponent implements OnInit {
   }
 
   addPost() {
-    const newPost = { title: 'New Post', body: 'This is a new post.' };
+    const newPost = { userId: '105400579', title: 'New Post', body: 'Post sent by Tickets Controller 2025.' };
     this.http.createPost(newPost).subscribe({
       next: (response) => {
         console.log('Post created', response);
-        this.loadPosts(); // Reload posts after adding a new one
+        this.loadPosts();
       },
       error: (error) => {
         console.error('Error creating post', error);
