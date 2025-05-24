@@ -7,57 +7,17 @@
     </div>
     <div>
       <button mat-button color="primary" [disabled]="masterButtonDisable" (click)="selectComponent('component1')">
-        <mat-icon>shopping_cart</mat-icon>VENTA RÁPIDA
-      </button>
-    </div>
-    <div>
-      <button mat-button color="primary" [disabled]="masterButtonDisable" (click)="selectComponent('component2')">
-        <mat-icon>manage_accounts</mat-icon>CUENTAS ABIERTAS
-      </button>
-    </div>
-    <div>
-      <button mat-button color="primary" [disabled]="masterButtonDisable" (click)="selectComponent('component3')">
-        <mat-icon>help_outline</mat-icon>CUENTAS X COBRAR
-      </button>
-    </div>
-    <div>
-      <button mat-button color="primary" [disabled]="masterButtonDisable" (click)="selectComponent('component4')">
-        <mat-icon>paid</mat-icon>VENTAS
-      </button>
-    </div>
-    <div>
-      <button mat-button color="primary" [disabled]="masterButtonDisable" (click)="selectComponent('component5')">
-        <mat-icon>search</mat-icon>CONSULTAS
-      </button>
-    </div>
-    <div>
-      <button mat-button color="primary" [disabled]="masterButtonDisable" (click)="selectComponent('component6')">
-        <mat-icon>account_balance</mat-icon>CIERRE DIARIO
-      </button>
-    </div>
-    <div>
-      <button mat-button color="primary" [disabled]="masterButtonDisable" (click)="selectComponent('component7')">
-        <mat-icon>list</mat-icon>INVENTARIO
-      </button>
-    </div>
-    <div>
-      <button mat-button color="primary" [disabled]="masterButtonDisable" (click)="selectComponent('component8')">
-        <mat-icon>settings</mat-icon>AJUSTES
-      </button>
-    </div>
-    <div>
-      <button mat-button color="primary" [disabled]="masterButtonDisable" (click)="selectComponent('component9')">
-        <mat-icon>lock_open</mat-icon>ABRIR GAVETA
-      </button>
-    </div>
-    <div>
-      <button mat-button color="primary" (click)="openConfirmDialog()">
-        <mat-icon>logout</mat-icon>CERRAR SESIÓN
+        <mat-icon>manage_accounts</mat-icon>SALÓN
       </button>
     </div>
     <div>
       <button mat-button color="primary" (click)="selectComponent('component11')">
         <mat-icon>people</mat-icon>CAMBIAR USUARIO
+      </button>
+    </div>
+    <div>
+      <button mat-button color="primary" (click)="openConfirmDialog()">
+        <mat-icon>logout</mat-icon>CERRAR SESIÓN
       </button>
     </div>
   </div>
@@ -67,33 +27,6 @@
     </ng-container>
     <ng-container *ngIf="currentComponent === 'component1'">
       <app-component1></app-component1>
-    </ng-container>
-    <ng-container *ngIf="currentComponent === 'component2'">
-      <app-component2></app-component2>
-    </ng-container>
-    <ng-container *ngIf="currentComponent === 'component3'">
-      <app-component3></app-component3>
-    </ng-container>
-    <ng-container *ngIf="currentComponent === 'component4'">
-      <app-component4></app-component4>
-    </ng-container>
-    <ng-container *ngIf="currentComponent === 'component5'">
-      <app-component5></app-component5>
-    </ng-container>
-    <ng-container *ngIf="currentComponent === 'component6'">
-      <app-component6></app-component6>
-    </ng-container>
-    <ng-container *ngIf="currentComponent === 'component7'">
-      <app-component7></app-component7>
-    </ng-container>
-    <ng-container *ngIf="currentComponent === 'component8'">
-      <app-component8></app-component8>
-    </ng-container>
-    <ng-container *ngIf="currentComponent === 'component9'">
-      <app-component9></app-component9>
-    </ng-container>
-    <ng-container *ngIf="currentComponent === 'component10'">
-      <app-component10></app-component10>
     </ng-container>
     <ng-container *ngIf="currentComponent === 'component11'">
       <app-component11></app-component11>

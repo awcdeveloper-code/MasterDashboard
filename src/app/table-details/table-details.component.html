@@ -1,0 +1,11 @@
+<div class="container">
+    <h1>Table Details</h1>
+    <div *ngIf="tableNumber; else noTable">
+      <p><strong>Table Number:</strong> {{ tableNumber }}</p>
+      <p>Here you can add more details and functionality related to table {{ tableNumber }}.</p>
+      <button (click)="goBack()">Back to Tables</button>
+    </div>
+    <ng-template #noTable>
+      <p>Table information is not available.</p>
+    </ng-template>
+  </div>

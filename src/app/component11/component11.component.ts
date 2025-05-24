@@ -15,8 +15,12 @@ export class Component11Component {
   onSubmit() {
     if (this.username === 'admin' && this.password === 'password') {
       alert('Credenciales válidas, ingreso exitoso!');
+      localStorage.setItem('masterButtonDisable', 'true');
+      localStorage.setItem('userPIN', this.username);
     } else {
       alert('Credenciales ingresadas son inválidas!');
+      localStorage.setItem('masterButtonDisable', 'false');
+      localStorage.setItem('userPIN', '');
     }
   }
 }
