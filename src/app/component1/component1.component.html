@@ -9,10 +9,7 @@
           </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let table of tablesAvailable" (click)="onAvailableTableClick(table)" class="clickable-row" tabindex="0"
-                role="button"
-                (keydown.enter)="onAvailableTableClick(table)"
-                (keydown.space)="onAvailableTableClick(table)">
+            <tr *ngFor="let table of tablesAvailable" (click)="onAvailableTableClick(table)" class="clickable-row" tabindex="0" role="button">
                 <td>{{ table.number }}</td>
                 <td>{{ table.capacity }}</td>
           </tr>

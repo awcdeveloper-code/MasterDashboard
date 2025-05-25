@@ -12,6 +12,7 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
 import { Component0Component } from './component0/component0.component';
 import { Component1Component } from './component1/component1.component';
 import { Component11Component } from './component11/component11.component';
+import { TableDetailsComponent } from './table-details/table-details.component';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,8 @@ import { Component11Component } from './component11/component11.component';
     MatIconModule,
     Component0Component,
     Component1Component,
-    Component11Component],
+    Component11Component,
+    TableDetailsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

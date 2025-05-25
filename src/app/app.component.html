@@ -1,35 +1,48 @@
-<div class="dashboard">
-  <div class="left-panel">
-    <div>
-      <button mat-button color="primary" (click)="selectComponent('component0')">
-        <mat-icon>home</mat-icon>INICIO
-      </button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dashboard Layout</title>
+</head>
+<body>
+  <div class="dashboard">
+    <div class="left-panel">
+      <div>
+        <button mat-button color="primary" (click)="selectComponent('component0')">
+          <mat-icon>home</mat-icon>INICIO
+        </button>
+      </div>
+      <div>
+        <button mat-button color="primary" [disabled]="masterButtonDisable" (click)="selectComponent('component1')">
+          <mat-icon>manage_accounts</mat-icon>SALÓN
+        </button>
+      </div>
+      <div>
+        <button mat-button color="primary" (click)="selectComponent('component11')">
+          <mat-icon>people</mat-icon>CAMBIAR USUARIO
+        </button>
+      </div>
+      <div>
+        <button mat-button color="primary" (click)="openConfirmDialog()">
+          <mat-icon>logout</mat-icon>CERRAR SESIÓN
+        </button>
+      </div>
     </div>
-    <div>
-      <button mat-button color="primary" [disabled]="masterButtonDisable" (click)="selectComponent('component1')">
-        <mat-icon>manage_accounts</mat-icon>SALÓN
-      </button>
-    </div>
-    <div>
-      <button mat-button color="primary" (click)="selectComponent('component11')">
-        <mat-icon>people</mat-icon>CAMBIAR USUARIO
-      </button>
-    </div>
-    <div>
-      <button mat-button color="primary" (click)="openConfirmDialog()">
-        <mat-icon>logout</mat-icon>CERRAR SESIÓN
-      </button>
+    <div class="right-panel">
+      <ng-container *ngIf="currentComponent === 'component0'">
+        <app-component0></app-component0>
+      </ng-container>
+      <ng-container *ngIf="currentComponent === 'component1'">
+        <app-component1></app-component1>
+      </ng-container>
+      <ng-container *ngIf="currentComponent === 'component11'">
+        <app-component11></app-component11>
+      </ng-container>
+      <ng-container *ngIf="currentComponent === 'table-details'">
+        <app-table-details></app-table-details>
+      </ng-container>
     </div>
   </div>
-  <div class="right-panel">
-    <ng-container *ngIf="currentComponent === 'component0'">
-      <app-component0></app-component0>
-    </ng-container>
-    <ng-container *ngIf="currentComponent === 'component1'">
-      <app-component1></app-component1>
-    </ng-container>
-    <ng-container *ngIf="currentComponent === 'component11'">
-      <app-component11></app-component11>
-    </ng-container>
-  </div>
-</div>
+</body>
+</html>

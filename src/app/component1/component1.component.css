@@ -39,9 +39,9 @@ th, td {
 }
 
 thead th {
-  background: #e9f0ff;
+  background: darkblue;
   font-weight: 700;
-  color: #0056b3;
+  color: white;
   position: sticky;
   top: 0;
 }
